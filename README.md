@@ -195,7 +195,7 @@ http://localhost:8000
 
 🔗 GitHub Repository
 
-👉 [](https://github.com/mirzashanehyder/inclusive-learning-platform/)
+👉 [link](https://github.com/mirzashanehyder/inclusive-learning-platform/)
 
 
 
