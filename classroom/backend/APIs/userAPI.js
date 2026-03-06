@@ -68,8 +68,8 @@ userRoute.post('/login', async (req, res) => {
       // ✅ SET TOKEN IN HTTPONLY COOKIE
       res.cookie("token", encodedToken, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "strict",
+        secure: true,
+        sameSite: "none",
         maxAge: 24 * 60 * 60 * 1000 // 1 day
       });
   
@@ -127,4 +127,5 @@ userRoute.get("/profile", verifyToken, async (req, res) => {
     }
   });
   
+
   
