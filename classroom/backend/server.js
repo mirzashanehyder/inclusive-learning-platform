@@ -13,26 +13,28 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://inclusive-learning-platform.vercel.app",
-  "https://inclusive-learning-platf-git-59f47e-mirza-shane-hyders-projects.vercel.app"
+  "http://localhost:5173"
 ];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true);
+app.use(cors({
+  origin: function (origin, callback) {
 
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      } else {
-        return callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true
-  })
-);
-  
+    if (!origin) return callback(null, true);
+
+    // allow localhost
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    // allow ANY vercel deployment
+    if (/vercel\.app$/.test(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(cookieParser());
@@ -59,6 +61,7 @@ function connectToDBAndStartServer() {
 }
 
 connectToDBAndStartServer();
+
 
 
 
