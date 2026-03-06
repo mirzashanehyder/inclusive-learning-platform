@@ -14,10 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://inclusive-learning-platform.vercel.app"
-    ],
+    origin:"inclusive-learning-platform-3k8j3bev0.vercel.app",
     credentials: true
   })
 );
@@ -48,4 +45,5 @@ function connectToDBAndStartServer() {
 }
 
 connectToDBAndStartServer();
+
 
