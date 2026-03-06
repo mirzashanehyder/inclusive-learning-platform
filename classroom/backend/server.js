@@ -14,7 +14,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://inclusive-learning-platform.vercel.app"
+  "https://inclusive-learning-platform.vercel.app",
+  "https://inclusive-learning-platf-git-59f47e-mirza-shane-hyders-projects.vercel.app"
 ];
 
 app.use(
@@ -58,6 +59,7 @@ function connectToDBAndStartServer() {
 }
 
 connectToDBAndStartServer();
+
 
 
 
