@@ -16,7 +16,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://inclusive-learning-platform.vercel.app"
+    "inclusive-learning-platform-2g2r-4f06p1h9n.vercel.app"
   ],
   credentials: true
 }));
